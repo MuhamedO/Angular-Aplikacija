@@ -1,0 +1,52 @@
+<div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="uspjeh">
+    <p> {{ uspjeh }}</p>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+<div class="alert alert-danger alert-dismissable fade show" *ngIf="greska">
+    {{greska}}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+<div class="container">
+
+    <button class="btn btn-info" *ngFor="let regija of regije" (click)="filterPoRegiji(regija)">{{regija}}</button>
+    
+    <p>Ukupan broj stanovnika: {{ukupanBrojStanovnika | number}}</p>
+    <p>Ukupna površina: {{ukupnaPovrsina | number}}</p>
+    <div>
+        <input type="text" [(ngModel)]="terminZaPretragu" (ngModelChange)="pretraga($event)">
+        <button class="btn btn-primary pretrazi" (click)="filtriraj()">Pretraži</button>
+        <button class="btn btn-primary pretrazi" (click)="ponistiPretragu()">Poništi pretragu</button>
+    </div>
+    <div class="button-group">
+        <button type="button" class="btn btn-primary" (click)="sortiraj()">Sortiraj po imenu</button>
+        <button type="button" class="btn btn-success" (click)="sortirajPoBrojuStanovnika()">Sortiraj po broju st.</button>
+    </div>
+
+    <table class="table table-striped">
+
+        <thead>
+            <th>Ime</th>
+            <th>Alfa 3 kod</th>
+            <th>Regija</th>
+            <th>Broj stanovnika</th>
+            <th>Glavni grad</th>
+            <th>Površina</th>
+            <th>Zastava</th>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let drzava of listaDrzavaZaDisplay" [ngClass]="{'table-danger': drzava.population > 300000000}">
+                <td>{{drzava.name}}</td>
+                <td>{{drzava.alpha3Code}}</td>
+                <td>{{drzava.region}}</td>
+                <td>{{drzava.population | number }}</td>
+                <td>{{drzava.capital}}</td>
+                <td>{{drzava.area | number}}</td>
+                <td><img src="{{drzava.flag}}" height="40px" alt=""></td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>

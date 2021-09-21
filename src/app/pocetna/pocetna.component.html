@@ -1,0 +1,11 @@
+<p>pocetna works!</p>
+
+<ul *ngIf="prikaziUl">
+    <li *ngFor="let broj of brojevi" [ngClass]="{'crvena':broj<=3, 'plava':broj>3}">{{ broj }}</li>
+</ul>
+
+<ul [ngSwitch]="uslov">
+    <li *ngSwitchCase="true">Tačno</li>
+</ul>
+
+<h1 [ngStyle]="{'color': 'green'}"> Ng Style atribut direktiva</h1>

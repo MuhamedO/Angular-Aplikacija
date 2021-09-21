@@ -1,0 +1,35 @@
+<!-- <h4>FormGroup</h4>
+
+<form [formGroup]="drzavaForm" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="naziv">
+    <p>{{drzavaForm.value | json}}</p>
+
+    <button class="btn btn-primary" [disabled]="drzavaForm.pristine" type="submit">Pretraži</button>
+</form> -->
+
+<h4>FormBuilder</h4>
+
+<form [formGroup]="drzaveNovaForma" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="naziv">
+    <p>{{drzaveNovaForma.value | json}}</p>
+    <button class="btn btn-primary" [disabled]="drzaveNovaForma.pristine" type="submit">Pretraži</button>
+</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Naziv</th>
+            <th>Glavni grad</th>
+            <th>Broj stanovnika</th>
+            <th>Regija</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let drzava of drzave">
+            <td>{{drzava.name}}</td>
+            <td>{{drzava.capital}}</td>
+            <td>{{drzava.population | number}}</td>
+            <td>{{drzava.region}}</td>
+        </tr>
+    </tbody>
+</table>

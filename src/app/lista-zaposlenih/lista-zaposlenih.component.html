@@ -1,0 +1,31 @@
+<!-- <table class="table table-striped">
+    <thead>
+        <tr>
+        <th>Ime i prezime</th>
+        <th>Godine</th>
+        <th>Radno Mjesto</th>
+    </tr>
+    </thead>
+    
+    <tbody>
+    <tr *ngFor="let zaposen of zaposleni">
+        <td>{{ zaposen.ime }}</td>
+        <td>{{ zaposen.starost}}</td>
+        <td>{{ zaposen.radnoMjesto}}</td>
+    </tr>
+    </tbody>
+</table> -->
+
+<div class="container">
+    <div class="card" *ngFor="let zaposlenik of zaposleni">
+        <img src="https://picsum.photos/240/160">
+        <div class="card-body">
+            <div class="card-title">
+                {{zaposlenik.ime}}, {{zaposlenik.starost}}
+            </div>
+            <div class="card-text">
+                {{zaposlenik.radnoMjesto}}
+            </div>
+        </div>
+    </div>
+</div>

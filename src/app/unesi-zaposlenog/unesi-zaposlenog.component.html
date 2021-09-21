@@ -1,0 +1,8 @@
+<h4>Unesite podatke o novom zaposlenom</h4>
+
+<form [formGroup]="zaposleniForm" (ngSubmit)="onSubmit()">
+    <input class ="form-control" type="text" placeholder="Unesite ime i prezime zaposlenog" formControlName="ime">
+    <input class ="form-control" type="number" placeholder="Unesite godine zaposlenog" formControlName="starost">
+    <input class ="form-control" type="text" placeholder="Unesite radno mjesto" formControlName="radnoMjesto">
+    <button class="btn btn-primary" [disabled]="zaposleniForm.pristine" type="submit">Snimi</button>
+</form>
