@@ -9,7 +9,10 @@ import { Zaposleni } from '../zaposleni';
 })
 export class ApiService {
 
+
   constructor(private http : HttpClient) { }
+
+  //  key = '?api_key=ef441335-dd05-4ca2-b927-6c64966e126b';
 
   public getDrzave() : Observable<Drzave[]>{ 
     return this.http.get<Drzave[]>('https://www.angular-kurs.online/api/drzave');

@@ -1,11 +1,35 @@
-p {
-    color: red;
+// p {
+//     color: red;
+// }
+
+// .crvena {
+//     color: red;
+// }
+
+// .plava {
+//     color: blue;
+// }
+
+.background {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to bottom, rgba(95,7,91, 0.74), rgba(1, 21, 48, 0.493)), url('https://picsum.photos/1920/1080');
+    background-position: center;
+    background-size: cover;
 }
 
-.crvena {
-    color: red;
-}
-
-.plava {
-    color: blue;
+.title {
+    background: rgba(0,0,0,0.5);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    color: white;
+    font-size: 3rem;
+    text-transform: uppercase;
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

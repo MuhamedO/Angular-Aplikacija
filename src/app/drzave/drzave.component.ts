@@ -19,15 +19,19 @@ export class DrzaveComponent implements OnInit {
   regije: string[] = [];
   greska : string = "";
   uspjeh : string = "";
+  ucitavanjeUToku : boolean = false;
 
   constructor(private api : ApiService) { }
 
   ngOnInit(): void {
 
+    this.ucitavanjeUToku = true;
+
     this.api.getDrzave().subscribe((odgovor) => {
       this.listaDrzava = odgovor;
       this.listaDrzavaZaDisplay=odgovor;
       this.uspjeh="Uspješno ste očitali podatke";
+      this.ucitavanjeUToku = false;
 
       this.regije = [... new Set(this.listaDrzava.map((drzava)=>{return drzava.region}))].filter((regija)=> regija!== "");
 
