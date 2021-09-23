@@ -17,7 +17,7 @@ export class ApiService {
 
   public getDrzavePoNazivu(drzavaForm: any) : Observable<Drzave[]>{
     //return this.http.get<Drzave[]>('https:\\www.angular-kurs.online/api/drzave/' + drzavaForm.naziv);
-    return this.http.get<Drzave[]>(`https:\\www.angular-kurs.online/api/drzave/${drzavaForm.naziv}`)
+    return this.http.get<Drzave[]>(`https://www.angular-kurs.online/api/drzave/${drzavaForm.naziv}`)
   }
 
   public postZaposleni(zaposleniForm : Zaposleni){
